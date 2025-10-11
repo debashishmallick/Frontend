@@ -1,0 +1,211 @@
+/* Base container styles */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  background-image: 
+    radial-gradient(circle at 100% 100%, var(--primary-light) 0%, transparent 20%),
+    radial-gradient(circle at 0% 0%, var(--secondary-color) 0%, transparent 20%);
+  background-attachment: fixed;
+}
+
+/* Card styles */
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  padding: var(--spacing-xl);
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-normal);
+}
+
+.auth-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Title styles */
+.auth-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+/* Form styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs);
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  margin-left: var(--spacing-xs);
+}
+
+.form-input {
+  padding: var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-fast);
+}
+
+.form-input:hover {
+  border-color: var(--text-tertiary);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Button styles */
+.submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-md);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Footer styles */
+.auth-footer {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.auth-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+.auth-link:hover {
+  color: var(--primary-dark);
+  background-color: var(--background-tertiary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .auth-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .form-input {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Mobile improvements for better keyboard and small-screen behavior */
+@media (max-width: 640px) {
+  .auth-container {
+    padding: var(--spacing-sm);
+    align-items: flex-start;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .auth-card, .auth-card--compact {
+    width: 100%;
+    max-width: 460px;
+    padding: var(--spacing-md);
+    border-radius: calc(var(--border-radius-md));
+    box-shadow: var(--shadow-md);
+  }
+
+  .auth-card .auth-form, .auth-card--compact .auth-form {
+    max-height: 62vh;
+    overflow: auto;
+    padding-right: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .submit-button {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Compact card modifier: smaller spacing and tighter layout for partner register */
+.auth-card--compact {
+  max-width: 420px;
+  padding: calc(var(--spacing-md) + 0.25rem);
+  border-radius: calc(var(--border-radius-md));
+}
+
+.auth-card--compact .auth-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.auth-card--compact .auth-form {
+  gap: var(--spacing-sm);
+}
+
+.auth-card--compact .form-group {
+  gap: var(--spacing-xs);
+}
+
+.auth-card--compact .form-input {
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.auth-card--compact .submit-button {
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+@media (max-width: 480px) {
+  .auth-card--compact {
+    width: 95%;
+    padding: var(--spacing-sm);
+  }
+}
