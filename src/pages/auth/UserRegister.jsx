@@ -27,6 +27,7 @@ const UserRegister = () => {
           },
         }
       );
+      
       console.log("Registration success:", res.data);
 
       setName("");
